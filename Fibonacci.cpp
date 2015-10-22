@@ -57,9 +57,10 @@ int BottomUp(int n){
 int main () {
 
 	int n;
-	cout << "Enter a number = " << endl;
+	cout << "Enter a number = " ;
 	cin >> n;
 	cout << "Fibonacci number1 is = " << Fib(n) << endl;
-	cout << "Fibonacci number2 is = " << Fib(n) << endl;
+	cout << "Fibonacci number2 is = " << Memorization(n)<< endl;
+    cout << "Fibonacci number3 is = " << BottomUp(n)<< endl;
 
 }
