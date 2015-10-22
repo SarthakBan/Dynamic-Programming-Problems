@@ -1,8 +1,8 @@
-/* 
-Below is the code for 2 possible soltions Fibonacci number 
+/*
+Below is the code for 2 possible soltions Fibonacci number
 
-Created by 
-Sarthak Bansal 
+Created by
+Sarthak Bansal
 
 
 */
@@ -13,17 +13,17 @@ Sarthak Bansal
 
 using namespace std;
 
-//Recursive Algorithmn
+//---------------------------------------------------------Recursive Algorithmn--------------------------------------------------------------------------
 
 int Fib(int n){
-	if (n < 2)return 1;
+	if (n <= 2)return 1;
 	return (Fib(n-1)+Fib(n-2));
 }
 
-//Dynamic Programming solution with Memorization 
+//--------------------------------------------------Dynamic Programming solution with Memorization--------------------------------------------------------
 
 int MemFib(int n,int * MemArray){
-	if (n < 2)return 1;
+	if (n <= 2)return 1;
 	if (MemArray[n-1]>=0)return MemArray[n-1];
 	int f = MemFib(n-1,MemArray) + MemFib(n-2,MemArray);
 	MemArray[n-1] = f;
@@ -39,6 +39,20 @@ int Memorization(int n){
 
 	return (MemFib(n,MemArray));
 }
+
+// -------------------------------------------------- Dynamic Programming Bottom up Solution----------------------------------------------------------------
+
+int BottomUp(int n){
+	int f[n+1];
+  	int i;
+  	f[0] = 0;   f[1] = 1;
+  	for (i = 2; i <= n; i++)
+    	  f[i] = f[i-1] + f[i-2];
+
+  	return f[n];
+
+}
+
 
 int main () {
 
